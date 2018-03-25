@@ -12,6 +12,10 @@
 		A00E333D20671CD700CC20BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A00E333B20671CD700CC20BD /* Main.storyboard */; };
 		A00E333F20671CD700CC20BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A00E333E20671CD700CC20BD /* Assets.xcassets */; };
 		A00E334220671CD700CC20BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A00E334020671CD700CC20BD /* LaunchScreen.storyboard */; };
+		A00E334C206784D600CC20BD /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00E334B206784D600CC20BD /* Business.swift */; };
+		A00E33502068339100CC20BD /* BusinessCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00E334F2068339100CC20BD /* BusinessCell.swift */; };
+		A00E33522068489A00CC20BD /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00E33512068489A00CC20BD /* WebViewController.swift */; };
+		A00E335620684BCB00CC20BD /* BeaconTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00E335520684BCB00CC20BD /* BeaconTableView.swift */; };
 		CD6849DEA5C7B6AA15F2459F /* Pods_BeaconBrocaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D50B958E2F3902905A5A24BD /* Pods_BeaconBrocaster.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +28,10 @@
 		A00E333E20671CD700CC20BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A00E334120671CD700CC20BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A00E334320671CD700CC20BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A00E334B206784D600CC20BD /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Business.swift; path = /Users/yingmu52/Desktop/BeaconBrocaster/BeaconBrocaster/Business.swift; sourceTree = "<absolute>"; };
+		A00E334F2068339100CC20BD /* BusinessCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessCell.swift; sourceTree = "<group>"; };
+		A00E33512068489A00CC20BD /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		A00E335520684BCB00CC20BD /* BeaconTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconTableView.swift; sourceTree = "<group>"; };
 		C74BBEAC374EB853A716F69A /* Pods-BeaconBrocaster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeaconBrocaster.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeaconBrocaster/Pods-BeaconBrocaster.debug.xcconfig"; sourceTree = "<group>"; };
 		D50B958E2F3902905A5A24BD /* Pods_BeaconBrocaster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeaconBrocaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -78,12 +86,16 @@
 		A00E333620671CD700CC20BD /* BeaconBrocaster */ = {
 			isa = PBXGroup;
 			children = (
+				A00E33512068489A00CC20BD /* WebViewController.swift */,
+				A00E334F2068339100CC20BD /* BusinessCell.swift */,
+				A00E334B206784D600CC20BD /* Business.swift */,
 				A00E333720671CD700CC20BD /* AppDelegate.swift */,
 				A00E333920671CD700CC20BD /* ViewController.swift */,
 				A00E333B20671CD700CC20BD /* Main.storyboard */,
 				A00E333E20671CD700CC20BD /* Assets.xcassets */,
 				A00E334020671CD700CC20BD /* LaunchScreen.storyboard */,
 				A00E334320671CD700CC20BD /* Info.plist */,
+				A00E335520684BCB00CC20BD /* BeaconTableView.swift */,
 			);
 			path = BeaconBrocaster;
 			sourceTree = "<group>";
@@ -166,10 +178,18 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BeaconBrocaster/Pods-BeaconBrocaster-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
+				"${BUILT_PRODUCTS_DIR}/HGPlaceholders/HGPlaceholders.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Snakepit/Snakepit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HGPlaceholders.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Snakepit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,7 +237,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A00E334C206784D600CC20BD /* Business.swift in Sources */,
+				A00E33502068339100CC20BD /* BusinessCell.swift in Sources */,
 				A00E333A20671CD700CC20BD /* ViewController.swift in Sources */,
+				A00E335620684BCB00CC20BD /* BeaconTableView.swift in Sources */,
+				A00E33522068489A00CC20BD /* WebViewController.swift in Sources */,
 				A00E333820671CD700CC20BD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,7 +316,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -343,7 +367,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
