@@ -91,7 +91,7 @@ extension ViewController: CLLocationManagerDelegate {
 
   func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
     guard let beacon = beacons.last else { return }
-    if beacon.proximity.rawValue > 1 { // Out of range
+    if beacon.proximity.rawValue > 3 { // Out of range
       navigationItem.titleView = nil
       business.removeAll()
       tableView.reloadData()
