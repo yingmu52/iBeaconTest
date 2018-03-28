@@ -15,7 +15,6 @@
 		A00E334C206784D600CC20BD /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00E334B206784D600CC20BD /* Business.swift */; };
 		A00E33502068339100CC20BD /* BusinessCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00E334F2068339100CC20BD /* BusinessCell.swift */; };
 		A00E33522068489A00CC20BD /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00E33512068489A00CC20BD /* WebViewController.swift */; };
-		A00E335620684BCB00CC20BD /* BeaconTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00E335520684BCB00CC20BD /* BeaconTableView.swift */; };
 		CD6849DEA5C7B6AA15F2459F /* Pods_BeaconBrocaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D50B958E2F3902905A5A24BD /* Pods_BeaconBrocaster.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,7 +30,6 @@
 		A00E334B206784D600CC20BD /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Business.swift; path = /Users/yingmu52/Desktop/BeaconBrocaster/BeaconBrocaster/Business.swift; sourceTree = "<absolute>"; };
 		A00E334F2068339100CC20BD /* BusinessCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessCell.swift; sourceTree = "<group>"; };
 		A00E33512068489A00CC20BD /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
-		A00E335520684BCB00CC20BD /* BeaconTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconTableView.swift; sourceTree = "<group>"; };
 		C74BBEAC374EB853A716F69A /* Pods-BeaconBrocaster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeaconBrocaster.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeaconBrocaster/Pods-BeaconBrocaster.debug.xcconfig"; sourceTree = "<group>"; };
 		D50B958E2F3902905A5A24BD /* Pods_BeaconBrocaster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeaconBrocaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -95,7 +93,6 @@
 				A00E333E20671CD700CC20BD /* Assets.xcassets */,
 				A00E334020671CD700CC20BD /* LaunchScreen.storyboard */,
 				A00E334320671CD700CC20BD /* Info.plist */,
-				A00E335520684BCB00CC20BD /* BeaconTableView.swift */,
 			);
 			path = BeaconBrocaster;
 			sourceTree = "<group>";
@@ -136,6 +133,11 @@
 					A00E333320671CD700CC20BD = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -240,7 +242,6 @@
 				A00E334C206784D600CC20BD /* Business.swift in Sources */,
 				A00E33502068339100CC20BD /* BusinessCell.swift in Sources */,
 				A00E333A20671CD700CC20BD /* ViewController.swift in Sources */,
-				A00E335620684BCB00CC20BD /* BeaconTableView.swift in Sources */,
 				A00E33522068489A00CC20BD /* WebViewController.swift in Sources */,
 				A00E333820671CD700CC20BD /* AppDelegate.swift in Sources */,
 			);
