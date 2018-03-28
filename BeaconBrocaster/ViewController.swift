@@ -13,6 +13,7 @@ import Snakepit
 import Alamofire
 import Kingfisher
 import HGPlaceholders
+import UserNotifications
 
 class ViewController: UITableViewController {
 
@@ -55,9 +56,34 @@ class ViewController: UITableViewController {
       registerBackgroundTask()
     }
 
+    // Request User Notification
+    UNUserNotificationCenter
+      .current()
+      .requestAuthorization(options: [.alert, .sound]) { [weak self ] (granted, error) in
+        if granted { return }
+        self?.showAlert(title: "Please Enable Notification")
+    }
+
     // setup tableview
     tableView.dataSource = self
     tableView.delegate = self
+  }
+}
+
+extension ViewController {
+  func postNotification() {
+    let content = UNMutableNotificationContent()
+    content.title = "Welcome to Q.I Leap"
+    content.body = "you have entered a beacon range"
+    content.sound = UNNotificationSound.default()
+    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+//    let trigger = UNLocationNotificationTrigger(region: beaconRegion, repeats: true)
+    let request = UNNotificationRequest(
+      identifier: Bundle.main.bundleIdentifier!,
+      content: content,
+      trigger: trigger
+    )
+    UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
   }
 }
 
@@ -66,6 +92,7 @@ extension ViewController {
     let titleImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 51, height: 22))
     titleImageView.image = #imageLiteral(resourceName: "find_wordmark_k")
     navigationItem.titleView = titleImageView
+    navigationItem.title = "FIND"
   }
 
   @objc func getRecommendation() {
@@ -91,7 +118,6 @@ extension ViewController {
         self.business = json.businesses
         self.tableView.reloadData()
         self.tableView.refreshControl?.endRefreshing()
-        print("loaded data")
       } catch let e {
         print(e)
       }
@@ -119,6 +145,7 @@ extension ViewController: CLLocationManagerDelegate {
       navigationItem.title = "Outside of Beacon Range"
     } else { // In range
       print("in ranged")
+      postNotification()
       setBlackNavLogo()
       getRecommendation()
     }
