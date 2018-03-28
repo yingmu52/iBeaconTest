@@ -20,6 +20,8 @@ class ViewController: UITableViewController {
   // Backgroudn Task ID
   var backgroundTask: UIBackgroundTaskIdentifier = UIBackgroundTaskInvalid
 
+  var didScheduleNotification = false
+
   // Location Manager
   lazy var manager: CLLocationManager = {
     let mgr = CLLocationManager()
@@ -72,6 +74,7 @@ class ViewController: UITableViewController {
 
 extension ViewController {
   func postNotification() {
+    if didScheduleNotification == true { return }
     let content = UNMutableNotificationContent()
     content.title = "Welcome to Q.I Leap"
     content.body = "you have entered a beacon range"
@@ -84,6 +87,7 @@ extension ViewController {
       trigger: trigger
     )
     UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+    didScheduleNotification = true
   }
 }
 
@@ -139,6 +143,7 @@ extension ViewController: CLLocationManagerDelegate {
     }
     guard let beacon = beacons.last else { return }
     if beacon.proximity.rawValue > 1 { // Out of range
+      didScheduleNotification = false
       navigationItem.titleView = nil
       business.removeAll()
       tableView.reloadData()
